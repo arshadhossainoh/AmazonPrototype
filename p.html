@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello</title>
+</head>
+<body>
+    <button  class="js-add-button">Add</button>
+    <button class="js-remove-button">Remove</button>
+    <button class="js-click-button">Click</button>
+    <p>  
+        <input class="js-input"> 
+        <button class="js-submit-button">submit</button>
+        <p class="js-submit-p"></p>
+    </p>
+
+
+
+
+
+
+    <script>
+
+        document.querySelector('.js-submit-button').addEventListener('click', ()=>{
+            submit();
+        });
+
+        document.body.addEventListener('keydown', (event)=>{
+            if(event.key === 'Enter'){
+                submit();
+            }
+        })
+         
+         submit = ()=> {
+            const inputEle = document.querySelector('.js-input');
+            const input = inputEle.value;
+            document.querySelector('.js-submit-p').innerHTML = `You submitted ${input}`;
+         }
+            
+            
+
+
+
+
+
+       const clickEle = document.querySelector('.js-click-button');
+       clickEle.addEventListener('click', ()=>{
+        if (clickEle.innerHTML === 'Click'){
+            clickEle.innerHTML = 'Clicked'
+        }else{
+            clickEle.innerHTML = 'Click';
+        }
+       });
+       
+       document.querySelector('.js-add-button').addEventListener('click', ()=>{
+        add();
+       })
+    
+
+        add = () => {
+            const addButton = document.querySelector('.js-add-button');
+
+            if (addButton.innerHTML === 'Add'){
+                addButton.innerHTML = 'Added';
+            }else {
+                addButton.innerHTML = 'Add';
+            };
+
+
+        }
+        
+        document.querySelector('.js-remove-button').addEventListener('click', ()=>{
+            remove();
+        })
+     
+
+
+        remove = () => {
+            const removeEle = document.querySelector('.js-remove-button');
+            if (removeEle.innerHTML === 'Remove'){
+                removeEle.innerHTML = 'Removed';
+            }else {
+                removeEle.innerHTML = 'Remove';
+            };
+        }
+        
+
+       
+    </script>
+</body>
+</html>
